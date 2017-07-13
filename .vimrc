@@ -13,7 +13,10 @@ set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-set shell=bash
+set shell=zsh
+
+filetype on
+filetype plugin on
 
 set backspace=indent,eol,start
 
@@ -24,7 +27,25 @@ set smartindent
 
 set tabstop=4
 set shiftwidth=4
+set smarttab
 set expandtab
+set softtabstop=4
+let python_highlight_all = 1
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+vmap <C-C> "+yi
+imap <C-V> "+gPi
+
+set nobackup
+set noswapfile
 
 set textwidth=120
 
@@ -37,14 +58,10 @@ set ts=4 sw=4 noet
 
 set number
 set showmatch
-set comments=s1:/*,mb:\ *,elx:\ */
+"set comments=s1:/*,mb:\ *,elx:\ */
 
 "omnicomplete
 
 imap <F2> <ESC>:w<CR>i
-
-autocmd filetype cpp nnoremap <F7> :!g++ % -ggdb -o %:r <CR>
-autocmd filetype cpp nnoremap <F8> :!g++ % -ggdb -o %:r -lncurses<CR>
-autocmd filetype cpp nnoremap <F5> :!g++ % -ggdb -o %:r && ./%:r <CR>
 
 
