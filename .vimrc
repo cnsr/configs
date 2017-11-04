@@ -33,7 +33,7 @@ set expandtab
 set softtabstop=4
 let python_highlight_all = 1
 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -77,3 +77,21 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
+
+" python-syntax
+let python_highlight_all = 1
+
+" tabs for html, css adn js
+autocmd Filetype html setlocal sts=0 sw=4 ts=4  noexpandtab
+autocmd Filetype css setlocal ts=2 sw=2 noexpandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+
+" turns off tab highlight for html, css adn js
+au BufNewFile,BufRead *.html set nolist
+au BufNewFile,BufRead *.css set nolist
+au BufNewFile,BufRead *.js set nolist
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>

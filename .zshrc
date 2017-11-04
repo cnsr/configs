@@ -83,10 +83,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+#
+stty -ixon
+#
 export PATH="/home/cnsr/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin
