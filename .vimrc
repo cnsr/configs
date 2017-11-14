@@ -12,7 +12,6 @@ ino {<CR> {<CR>}<ESC>O
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-
 set shell=zsh
 
 filetype on
@@ -100,3 +99,7 @@ vmap <Tab> >gv
 vmap <S-Tab> <gv
 " for insert mode
 inoremap <S-Tab> <C-d>
+
+" comment out multiple lines
+vnoremap <C-n> :norm i#<ENTER>
+vnoremap <C-m> :norm x<ENTER>
