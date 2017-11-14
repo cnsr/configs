@@ -1,5 +1,4 @@
 set nocompatible
-
 set guioptions+=T
 
 " autobrackets
@@ -95,3 +94,9 @@ au BufNewFile,BufRead *.js set nolist
 noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
+
+" Tabulation
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+" for insert mode
+inoremap <S-Tab> <C-d>
