@@ -110,3 +110,8 @@ nmap <C-S-Up> <C-W>+<C-W>+
 " resize vertical split window
 nmap <C-S-Right> <C-W>><C-W>>
 nmap <C-S-Left> <C-W><<C-W><
+
+" Unbind Q and F1 and shift+K
+nnoremap Q <nop>
+nnoremap <F1> <nop>
+map <S-k> <Nop>
