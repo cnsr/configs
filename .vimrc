@@ -103,3 +103,10 @@ inoremap <S-Tab> <C-d>
 " comment out multiple lines
 vnoremap <C-n> :norm i#<ENTER>
 vnoremap <C-m> :norm x<ENTER>
+
+" resize horzontal split window
+nmap <C-S-Down> <C-W>-<C-W>-
+nmap <C-S-Up> <C-W>+<C-W>+
+" resize vertical split window
+nmap <C-S-Right> <C-W>><C-W>>
+nmap <C-S-Left> <C-W><<C-W><
