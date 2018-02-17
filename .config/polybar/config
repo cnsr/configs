@@ -1,8 +1,20 @@
 [colors]
 foreground = #aaafb2
+fg = #aaafb2
+bg = #333333
 foreground-alt = #aaafb2
 ;background = #ff121c21
 background = #333333
+
+
+obfg=${self.fg}
+obifg=${self.fg}
+obbg=${self.bg}
+obibg=${self.bg}
+
+blue = #8fa1b3
+urgent = #bf616a
+
 
 ;zenburn
 ; gray
@@ -54,10 +66,47 @@ module-margin-right = 2
 font-0 = Noto Sans:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-2 = FontAwesome:fontformat=truetype:size=12:antialias=false;0
+font-3 = "MaterialIcons:size=9:antialias=false;3"
 
-modules-left = menu-apps
+;modules-left = menu-apps
+modules-left = openbox
+;modules-left = workspaces
 modules-center = xwindow
 modules-right = bitcoin filesystem uptime volume xkeyboard wlan battery date
+
+[bar/small]
+monitor = LVDS-1
+width = 10%
+height = 31
+offset-x = 73%
+offset-y = 0%
+radius = 0.0
+
+locale = en_US.UTF-8
+;background = ${colors.background}
+background = #000000
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 1
+
+font-0 = Noto Sans:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-2 = FontAwesome:fontformat=truetype:size=12:antialias=false;0
+font-3 = "MaterialIcons:size=9:antialias=false;3"
+
+modules-left = 
+modules-center = bitcoin filesystem
+modules-right = 
 
 [module/xwindow]
 type = internal/xwindow
@@ -307,8 +356,8 @@ menu-1-0 = BACK
 menu-1-0-exec = menu-open-0
 menu-1-1 = Firefox 
 menu-1-1-exec = firefox &
-menu-1-2 = Chrome 
-menu-1-2-exec = google-chrome &
+menu-1-2 = Chromium 
+menu-1-2-exec = chromium-browser &
 
 menu-2-0 = BACK
 menu-2-0-exec = menu-open-0
@@ -318,13 +367,13 @@ menu-2-1-exec = vim &
 menu-3-0 = BACK
 menu-3-0-exec = menu-open-0
 menu-3-1 = Terminal 
-menu-3-1-exec = xfce4-terminal &
+menu-3-1-exec = terminator &
 menu-3-2 = FS 
-menu-3-2-exec = thunar &
+menu-3-2-exec = pcmanfm &
 
 [module/uptime]
 type = custom/script
-interval = 1200
+interval = 60
 format = "<label> "
 format-prefix = ""
 format-prefix-foreground = ${colors.zpinker}
@@ -332,7 +381,88 @@ exec = ~/.config/polybar/uptime.sh
 
 [module/bitcoin]
 type = custom/script
-interval = 300
+interval = 60
 format = "<label> "
 format-prefix = "₿"
+format-prefix-foreground = ${colors.urgent}
 exec = ~/.config/polybar/bitcoin.py
+
+[module/openbox]
+type=internal/xworkspaces
+pin-workspaces=true
+enable-click=false
+enable-scroll=false
+format=<label-state>
+label-monitor=%name%
+label-active =%icon%%name%
+label-active-foreground =${colors.obfg} 
+label-active-background =${colors.obbg} 
+label-active-underline=#fba922
+label-active-padding=1
+label-occupied =%name%
+label-occupied-background=${colors.obbg}
+label-occupied-padding=1
+label-urgent=%index%
+label-urgent-foreground=#000000
+label-urgent-background=#bd2c40
+label-urgent-underline=#9b0a20
+label-empty =%name%
+label-empty-padding=1
+label-empty-background=${colors.obibg}
+label-empty-foreground=${colors.obifg}
+
+[module/openbox_old]
+type                      = internal/xworkspaces
+pin-workspaces            = true
+enable-click              = false
+enable-scroll             = false
+format                    = <label-state>
+label-monitor             = %name%
+label-active              = %icon%%name%
+label-active-foreground   = ${colors.foreground}
+label-active-background   = ${colors.background}
+label-active-underline    = #fba922
+label-active-padding      = 1
+label-occupied            = %name%
+label-occupied-background = #f5f5dc
+label-occupied-padding    = 1
+label-urgent              = %index%
+label-urgent-foreground   = #000000
+label-urgent-background   = #bd2c40
+label-urgent-underline    = #9b0a20
+label-empty               = %name%
+label-empty-padding       = 1
+label-empty-background    = ${colors.background}
+label-empty-foreground    = ${colors.foreground}
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; Openbox Workspaces ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+format-padding = 0
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+icon-8 = 9;
+icon-9 = 10;
+icon-default =
+format = <label-state>
+label-active = " %icon% %name% "
+label-active-foreground = ${colors.blue}
+label-active-underline = ${colors.blue}
+label-occupied = " %icon% %name% "
+label-occupied-underline = ${colors.blue}
+label-urgent = " %icon% %name% "
+label-urgent-foreground = ${colors.urgent}
+label-urgent-underline = ${colors.urgent}
+label-empty = " %icon% %name% "
+label-empty-foreground = ${colors.foreground}

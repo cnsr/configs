@@ -1,0 +1,6 @@
+tint2 &
+(sleep 1 && xxkb) &
+pnmixer &
+polybar small &
+dunst &
+variety &

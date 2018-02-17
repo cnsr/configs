@@ -1,0 +1,30 @@
+XXkb.image.path: /home/cnsr/.config/xxkb
+
+XXkb.mainwindow.type: tray
+
+XXkb.group.base: 1
+XXkb.group.alt: 2
+
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.appicon: yes
+XXkb.mainwindow.border.width: 1
+XXkb.mainwindow.label.enable: no
+XXkb.mainwindow.border.color: white
+XXkb.mainwindow.geometry: 20x20+0+0
+XXkb.mainwindow.image.1: us.XPM
+XXkb.mainwindow.image.2: ua.XPM
+XXkb.mainwindow.image.3: 
+XXkb.mainwindow.image.4: 
+XXkb.mainwindow._delete: no
+
+XXkb.button.enable: no
+
+XXkb.controls.focusout: no
+XXkb.controls.two_state: no
+XXkb.controls.add_when_start: yes
+XXkb.controls.add_when_create: yes
+XXkb.controls.add_when_change: no
+
+XXkb.mainwindow.xpm.1: us.XPM
+XXkb.mainwindow.xpm.2: ua.XPM
+XXkb.mainwindow.label.enable: no
