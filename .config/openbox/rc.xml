@@ -186,33 +186,13 @@
    <keybind key="XF86AudioLowerVolume"><action name="Execute"><command>amixer set Master playback 5%-</command></action></keybind>
    <keybind key="XF86AudioMute"><action name="Execute"><command>amixer -D pulse set Master Playback Switch toggle</command></action></keybind>
     <keybind key="XF86AudioMicMute"><action name="Execute"><command>amixer set Capture toggle</command></action></keybind>
-	<!-- Move and resize -->
-    <keybind key="W-Left">        <!-- MoveResizeTo Left half of screen -->
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="Raise"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
-        <x>0</x>
-        <y>0</y>
-      </action>
-    </keybind>
-    <keybind key="W-Right">        <!--MoveResizeTo Right half of screen -->
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="Raise"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
-        <x>50%</x>
-        <y>0</y>
-      </action>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="Maximize"/>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="Iconify"/>
-    </keybind>
+    <keybind key="XF86MonBrightnessUp"><action name="Execute"><command>python ~/python/shit/brightness.py</command></action></keybind>
+    <keybind key="XF86MonBrightnessDown"><action name="Execute"><command>python ~/python/shit/brightness.py</command></action></keybind>
+    <!-- Move and resize -->
+    <keybind key="W-Left"><!-- MoveResizeTo Left half of screen --><action name="UnmaximizeFull"/><action name="MaximizeVert"/><action name="Raise"/><action name="MoveResizeTo"><width>50%</width><x>0</x><y>0</y></action></keybind>
+    <keybind key="W-Right"><!--MoveResizeTo Right half of screen --><action name="UnmaximizeFull"/><action name="MaximizeVert"/><action name="Raise"/><action name="MoveResizeTo"><width>50%</width><x>50%</x><y>0</y></action></keybind>
+    <keybind key="W-Up"><action name="Maximize"/></keybind>
+    <keybind key="W-Down"><action name="Iconify"/></keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
