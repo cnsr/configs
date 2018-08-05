@@ -1,5 +1,6 @@
 set nocompatible
 set guioptions+=T
+set cursorline
 
 " autobrackets
 ino " ""<left>
@@ -7,7 +8,7 @@ ino ' ''<left>
 ino ( ()<left>
 ino [ []<left>
 ino { {}<left>
-ino {<CR> {<CR>}<ESC>O 
+ino {<CR> {<CR>}<ESC>O
 " encoding
 set enc=utf-8
 set fenc=utf-8
@@ -56,7 +57,11 @@ syntax enable
 " let g:solarized_termcolors=256
 " set background=dark
 " colorscheme solarized
-colorscheme zenburn
+" colorscheme zenburn
+" colorscheme apprentice
+" colorscheme srcery
+colorscheme gruvbox
+set background=dark
 set ts=4 sw=4 noet
 
 set number
@@ -83,6 +88,10 @@ let python_highlight_all = 1
 autocmd Filetype html setlocal sts=0 sw=4 ts=4  noexpandtab
 autocmd Filetype css setlocal ts=2 sw=2 noexpandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 et
+autocmd Filetype c setlocal ts=4 sw=2 sts=4 et
+autocmd Filetype h setlocal ts=4 sw=4 sts=4 et
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " turns off tab highlight for html, css adn js
 au BufNewFile,BufRead *.html set nolist
@@ -115,3 +124,7 @@ nmap <C-S-Left> <C-W><<C-W><
 nnoremap Q <nop>
 nnoremap <F1> <nop>
 map <S-k> <Nop>
+
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+set langmap='йцукенгшщзхїфівапролджєячсмитьбю~ЙЦУКЕHГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
