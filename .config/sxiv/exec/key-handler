@@ -1,0 +1,19 @@
+#!/bin/sh
+while read file
+do
+        case "$1" in
+	"C-]")
+		convert -rotate 90 "$file" "$file" ;;
+	"C-[")
+		convert -rotate -90 "$file" "$file" ;;
+	"C-c")
+		#echo -n "$file" | xclip -selection clipboard &&
+		echo -n "$file" | xclip -selection clipboard "$file" -t image/png &&
+		notify-send "$file copied to clipboard" & ;;
+	"C-C")
+		echo -n "$(readlink -f "$file")" | xclip -selection clipboard &&
+			notify-send "$(readlink -f "$file") copied to clipboard" & ;;
+	"C-k")	 krita "$file" & ;;
+	"q") pkill sxiv ;;
+        esac
+done
