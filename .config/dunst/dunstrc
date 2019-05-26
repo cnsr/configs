@@ -124,8 +124,8 @@
     browser = /usr/bin/chromium-browser -new-tab
 
 [frame]
-    width = 0
-    color = "#000000"
+    width = 1
+    color = "#DE935F"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
@@ -153,8 +153,10 @@
     timeout = 2
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    #background = "#285577"
+    background = "#1D1F21"
+    #foreground = "#ffffff"
+    foreground = "#C5C8C6"
     timeout = 3
 
 [urgency_critical]

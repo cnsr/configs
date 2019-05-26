@@ -1,8 +1,8 @@
 tint2 &
+feh --bg-fill /home/cnsr/Pictures/maymays/stare.jpg &
 (sleep 1 && xxkb) &
 pnmixer &
 dunst &
-variety &
 stty -ixon &
 xinput --set-button-map 11 1 2 3 4 5 6 7 9 8 10 &
 
