@@ -1,3 +1,22 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-easy-align'
+
+" Plug 'SirVer/ultisnips' | 
+Plug 'honza/vim-snippets' | Plug 'mxw/vim-jsx'
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Initialize plugin system
+call plug#end()
 set nocompatible
 set guioptions+=T
 set cursorline
@@ -60,7 +79,7 @@ syntax enable
 " colorscheme zenburn
 " colorscheme apprentice
 " colorscheme srcery
-colorscheme gruvbox
+" colorscheme gruvbox
 set background=dark
 set ts=4 sw=4 noet
 
@@ -88,6 +107,9 @@ let python_highlight_all = 1
 autocmd Filetype html setlocal sts=0 sw=4 ts=4  noexpandtab
 autocmd Filetype css setlocal ts=2 sw=2 noexpandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+autocmd Filetype js setlocal ts=4 sw=4 sts=0 et
+autocmd Filetype tsx setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype jsx setlocal ts=4 sw=4 sts=0 et
 autocmd Filetype cpp setlocal ts=4 sw=4 sts=4 et
 autocmd Filetype c setlocal ts=4 sw=2 sts=4 et
 autocmd Filetype h setlocal ts=4 sw=4 sts=4 et
@@ -97,6 +119,9 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 au BufNewFile,BufRead *.html set nolist
 au BufNewFile,BufRead *.css set nolist
 au BufNewFile,BufRead *.js set nolist
+au BufNewFile,BufRead *.jsx set nolist
+au BufNewFile,BufRead *.tsx set nolist
+
 
 " Use CTRL-S for saving, also in Insert mode
 noremap <C-S> :update<CR>
@@ -128,3 +153,9 @@ map <S-k> <Nop>
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 set langmap='йцукенгшщзхїфівапролджєячсмитьбю~ЙЦУКЕHГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
+" bind NerdTreeToggle
+nmap <C-f> :NERDTreeToggle<CR>
+
