@@ -1,0 +1,5 @@
+{
+    "disagnostic.DisplayByAle": true,
+    "pyright.enable": true,
+    "python.venvPath": "~/.pyenv/versions/"
+}
